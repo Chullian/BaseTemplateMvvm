@@ -1,5 +1,6 @@
 package com.chullian.app.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.observe
@@ -47,6 +48,10 @@ class MainActivity : AppCompatActivity(), ItemRecyclerAdapter.ItemInteraction {
     }
 
     override fun onItemSelected(position: Int, item: Item) {
-
+        if(!item.isLocked) {
+            var intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("itemId", item.itemId)
+            startActivity(intent)
+        }
     }
 }
