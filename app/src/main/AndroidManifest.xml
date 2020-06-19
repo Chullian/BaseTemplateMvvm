@@ -1,8 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.chullian.app">
+    package="com.chullian.template">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
-        android:name=".App"
+        android:name="com.chullian.template.tools.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activities.MainActivity">
+        <activity android:name="com.chullian.template.ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,7 +19,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.SecondActivity" android:parentActivityName=".activities.MainActivity"/>
+        <activity
+            android:name="com.chullian.template.ui.activities.SecondActivity"
+            android:parentActivityName="com.chullian.template.ui.activities.MainActivity" />
 
     </application>
 
